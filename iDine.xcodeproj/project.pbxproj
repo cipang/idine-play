@@ -20,6 +20,7 @@
 		513D22ED25D1870E00C1A803 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22EC25D1870E00C1A803 /* OrderView.swift */; };
 		513D22F025D1880700C1A803 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22EF25D1880700C1A803 /* MainView.swift */; };
 		513D22F325D1B03500C1A803 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22F225D1B03500C1A803 /* CheckoutView.swift */; };
+		CD6544C0266601C800A5397E /* NewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6544BF266601C800A5397E /* NewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		513D22EC25D1870E00C1A803 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		513D22EF25D1880700C1A803 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		513D22F225D1B03500C1A803 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		CD6544BF266601C800A5397E /* NewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				513D22CF25D16D9F00C1A803 /* Assets.xcassets */,
 				513D22D425D16D9F00C1A803 /* Info.plist */,
 				513D22D125D16D9F00C1A803 /* Preview Content */,
+				CD6544BF266601C800A5397E /* NewView.swift */,
 			);
 			path = iDine;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				513D22EA25D17C4C00C1A803 /* ItemDetail.swift in Sources */,
 				513D22F025D1880700C1A803 /* MainView.swift in Sources */,
 				513D22F325D1B03500C1A803 /* CheckoutView.swift in Sources */,
+				CD6544C0266601C800A5397E /* NewView.swift in Sources */,
 				513D22ED25D1870E00C1A803 /* OrderView.swift in Sources */,
 				513D22CE25D16D9E00C1A803 /* ContentView.swift in Sources */,
 				513D22CC25D16D9E00C1A803 /* iDineApp.swift in Sources */,
