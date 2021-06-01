@@ -9,17 +9,15 @@ import SwiftUI
 
 struct NewView: View {
     @State private var name = "Apple Smith"
-    @State private var selection: NSRange = NSRange()
+    @State private var snippet: String? = nil
     @State private var isDoneAlertShowing = false
     
     var body: some View {
         VStack {
-            TextView(text: $name, selection: $selection)
-                .border(Color.black)
+            TextView(text: $name, insertText: $snippet)
+                .border(Color(UIColor.separator))
             
             Text("\(name)")
-            
-            Text(NSStringFromRange(selection))
 
             HStack {
                 Button {
@@ -34,10 +32,7 @@ struct NewView: View {
                 .padding()
                 
                 Button("Insert") {
-                    let r = "Hello"
-                    let s = name.replacingCharacters(in: Range(selection, in: name)!, with: r)
-                    name = s
-                    selection = NSMakeRange(selection.location + r.count, 0)
+                    snippet = "Hello"
                 }
                 .padding()
             }
@@ -50,10 +45,10 @@ struct NewView: View {
 
 struct TextView: UIViewRepresentable {
     @Binding var text: String
-    @Binding var selection: NSRange
+    @Binding var insertText: String?
             
     func makeCoordinator() -> Coordinator {
-        Coordinator(text: $text, selection: $selection)
+        Coordinator(self)
     }
     
     func makeUIView(context: Context) -> UITextView {
@@ -65,30 +60,42 @@ struct TextView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: UITextView, context: Context) {
-        if uiView.text != text {
+        if let insertTextStr = insertText {
+            DispatchQueue.main.async {
+                var s = insertTextStr,
+                    uiRange = uiView.selectedRange,
+                    uiText = uiView.text ?? ""
+                
+                if uiRange.location >= 1, let beforeRange = Range(NSMakeRange(uiRange.location - 1, 1), in: uiText) {
+                    if uiText[beforeRange].rangeOfCharacter(from: .whitespaces) == nil {
+                        s = " " + s
+                    }
+                }
+                
+                if let afterRange = Range(NSMakeRange(uiRange.location + uiRange.length, 1), in: uiText) {
+                    if uiText[afterRange].rangeOfCharacter(from: .whitespaces) == nil {
+                        s += " "
+                    }
+                }
+                
+                uiView.insertText(s)
+                insertText = nil
+            }
+        } else if uiView.text != text {
             uiView.text = text
-        }
-        if uiView.selectedRange != selection {
-            uiView.selectedRange = selection
         }
     }
 }
 
 class Coordinator: NSObject, UITextViewDelegate {
-    var text: Binding<String>
-    var selection: Binding<NSRange>
+    var parent: TextView
     
-    init(text: Binding<String>, selection: Binding<NSRange>) {
-        self.text = text
-        self.selection = selection
-    }
-    
-    func textViewDidChangeSelection(_ textView: UITextView) {
-        self.selection.wrappedValue = textView.selectedRange
+    init(_ parent: TextView) {
+        self.parent = parent
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        self.text.wrappedValue = textView.text
+        parent.text = textView.text
     }
 }
 
