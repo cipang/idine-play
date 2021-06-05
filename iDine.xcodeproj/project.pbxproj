@@ -20,6 +20,7 @@
 		513D22ED25D1870E00C1A803 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22EC25D1870E00C1A803 /* OrderView.swift */; };
 		513D22F025D1880700C1A803 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22EF25D1880700C1A803 /* MainView.swift */; };
 		513D22F325D1B03500C1A803 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22F225D1B03500C1A803 /* CheckoutView.swift */; };
+		CD36618F266B5D050087A43B /* PadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD36618E266B5D050087A43B /* PadView.swift */; };
 		CD6544C0266601C800A5397E /* NewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6544BF266601C800A5397E /* NewView.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		513D22EC25D1870E00C1A803 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		513D22EF25D1880700C1A803 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		513D22F225D1B03500C1A803 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		CD36618E266B5D050087A43B /* PadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadView.swift; sourceTree = "<group>"; };
 		CD6544BF266601C800A5397E /* NewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				513D22D425D16D9F00C1A803 /* Info.plist */,
 				513D22D125D16D9F00C1A803 /* Preview Content */,
 				CD6544BF266601C800A5397E /* NewView.swift */,
+				CD36618E266B5D050087A43B /* PadView.swift */,
 			);
 			path = iDine;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				513D22CE25D16D9E00C1A803 /* ContentView.swift in Sources */,
 				513D22CC25D16D9E00C1A803 /* iDineApp.swift in Sources */,
 				513D22E025D16DD900C1A803 /* Order.swift in Sources */,
+				CD36618F266B5D050087A43B /* PadView.swift in Sources */,
 				513D22E725D1729200C1A803 /* ItemRow.swift in Sources */,
 				513D22DC25D16DC000C1A803 /* Helper.swift in Sources */,
 				513D22E125D16DD900C1A803 /* Menu.swift in Sources */,
